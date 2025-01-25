@@ -1,6 +1,6 @@
 module github.com/nemesidaa/ip-gateway
 
-go 1.23.2
+go 1.22
 
 require github.com/gofiber/fiber/v2 v2.52.6
 
