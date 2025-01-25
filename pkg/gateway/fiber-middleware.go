@@ -2,6 +2,7 @@ package gateway
 
 import (
 	"github.com/gofiber/fiber/v2"
+	calculations "github.com/nemesidaa/ip-gateway/pkg/calc"
 )
 
 // ! Config input formats: ip/cidr only
@@ -13,7 +14,7 @@ func V4Gateway(c *fiber.Ctx) error {
 	}
 	pass := false
 	for _, net := range conf.Networks {
-		ok, err := IsIPInSubnet(ip, net.Subnet, net.Mask)
+		ok, err := calculations.IsIPInSubnet(ip, net.Subnet, net.Mask)
 		if err != nil {
 			return ErrFailedToCalculateIP
 		}

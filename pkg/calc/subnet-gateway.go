@@ -1,4 +1,4 @@
-package gateway
+package calculations
 
 import (
 	"fmt"
