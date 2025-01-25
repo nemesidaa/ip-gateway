@@ -1,4 +1,4 @@
-package main
+package gateway
 
 type NetworkSetup struct {
 	Mask   int    `json:"mask" yaml:"mask" mapstructure:"mask"`

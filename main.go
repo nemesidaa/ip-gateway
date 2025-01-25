@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/nemesidaa/ip-gateway/pkg/gateway"
 )
 
 func main() {
 	// Пример использования функции calculateSubnetMask
 	cidr := 24 // Например, для /24
-	subnetMask, err := CalculateSubnetMask(cidr)
+	subnetMask, err := gateway.CalculateSubnetMask(cidr)
 	if err != nil {
 		fmt.Println("Ошибка:", err)
 		return
@@ -17,7 +19,7 @@ func main() {
 	// Пример использования функции isIPInSubnet
 	ip := "192.168.1.10"
 	network := "192.168.1.0"
-	ok, err := IsIPInSubnet(ip, network, cidr)
+	ok, err := gateway.IsIPInSubnet(ip, network, cidr)
 	if err != nil {
 		fmt.Println("Ошибка:", err)
 		return
