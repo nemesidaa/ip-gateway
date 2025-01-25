@@ -10,7 +10,10 @@ type V4GatewayConfig struct {
 	Networks     []*NetworkSetup `json:"networks" yaml:"networks" mapstructure:"networks"`
 }
 
-var conf *V4GatewayConfig
+var conf *V4GatewayConfig = &V4GatewayConfig{
+	IpHeaderName: "",
+	Networks:     []*NetworkSetup{},
+}
 
 func UploadGatewayConfig(config *V4GatewayConfig) error {
 	// Save config to your preferred storage
