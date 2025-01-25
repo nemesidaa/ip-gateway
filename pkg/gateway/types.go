@@ -18,5 +18,8 @@ var conf *V4GatewayConfig = &V4GatewayConfig{
 func UploadGatewayConfig(config *V4GatewayConfig) error {
 	// Save config to your preferred storage
 	conf = config
+	if conf.IpHeaderName == "" {
+		return ErrNoConfig
+	}
 	return nil
 }
